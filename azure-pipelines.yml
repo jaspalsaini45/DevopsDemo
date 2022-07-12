@@ -22,8 +22,10 @@ steps:
 - task: UseDotNet@2
   inputs:
     packageType: 'sdk'
-    version: 
-
+    version: '6.x'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
